@@ -9,15 +9,20 @@ public class BuildingManager : MonoBehaviour
 
     private BuildingTypeListSO buildingTypeList;
 
-    private void Start()
+    // Use to initialize internal object, not depend on other external object
+    private void Awake()
     {
-        mainCamera = Camera.main;
-
         // Debug.Log(Resources.Load<BuildingTypeListSO>("BuildingTypeList"));
 
         buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
 
         buildingType = buildingTypeList.list[0];
+    }
+
+    // Use when need to access external object
+    private void Start()
+    {
+        mainCamera = Camera.main;
     }
 
     private void Update()

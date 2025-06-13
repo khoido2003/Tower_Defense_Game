@@ -60,11 +60,13 @@
     <Analyzer Include="D:\unity\Editor\6000.0.48f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ScriptableObjects\BuildingTypeSO.cs" />
     <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
-    <Compile Include="Assets\Scripts\BuildingTypeSO.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\ResourceTypeListSO.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\ResourceTypeSO.cs" />
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
-    <Compile Include="Assets\Scripts\BuidlingTypeListSO.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\BuidlingTypeListSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
