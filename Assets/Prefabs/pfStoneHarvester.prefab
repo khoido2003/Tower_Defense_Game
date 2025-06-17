@@ -96,6 +96,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7568528346856477573}
+  - component: {fileID: 7000942916974747750}
+  - component: {fileID: 464937896712439445}
   m_Layer: 0
   m_Name: pfStoneHarvester
   m_TagString: Untagged
@@ -119,3 +121,28 @@ Transform:
   - {fileID: 8270219104038095699}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7000942916974747750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8417797861578587567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74c68d5344d8304abb5c790b001872e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &464937896712439445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8417797861578587567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 654a1f0dc1527a4449b5521f40d520cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingType: {fileID: 11400000, guid: 64df4f67b3767da4cb704e999b019545, type: 2}

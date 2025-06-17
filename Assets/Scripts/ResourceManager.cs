@@ -1,12 +1,20 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
+    public static ResourceManager Instance { get; private set; }
+
+    // Event
+    public event EventHandler onResourceAmountChanged;
+
     private Dictionary<ResourceTypeSO, int> resourceAmountDictionary;
 
     private void Awake()
     {
+        Instance = this;
+
         resourceAmountDictionary = new Dictionary<ResourceTypeSO, int>();
 
         ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(
@@ -17,7 +25,7 @@ public class ResourceManager : MonoBehaviour
         {
             resourceAmountDictionary[resourceType] = 0;
         }
-        TestLog();
+        // TestLog();
     }
 
     private void Update()
@@ -27,22 +35,27 @@ public class ResourceManager : MonoBehaviour
             ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(
                 typeof(ResourceTypeListSO).Name
             );
-
-            AddResource(resourceTypeList.list[0], 2);
-            TestLog();
         }
     }
 
-    private void TestLog()
-    {
-        foreach (ResourceTypeSO resourceType in resourceAmountDictionary.Keys)
-        {
-            Debug.Log(resourceType.nameString + " " + resourceAmountDictionary[resourceType]);
-        }
-    }
+    // private void TestLog()
+    // {
+    //     foreach (ResourceTypeSO resourceType in resourceAmountDictionary.Keys)
+    //     {
+    //         Debug.Log(resourceType.nameString + " " + resourceAmountDictionary[resourceType]);
+    //     }
+    // }
 
     public void AddResource(ResourceTypeSO resourceType, int amount)
     {
         resourceAmountDictionary[resourceType] += amount;
+
+        // Trigger event
+        onResourceAmountChanged?.Invoke(this, EventArgs.Empty);
+    }
+
+    public int GetResourceAmount(ResourceTypeSO resourceType)
+    {
+        return resourceAmountDictionary[resourceType];
     }
 }
