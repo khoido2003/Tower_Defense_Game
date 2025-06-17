@@ -1,22 +1,26 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BuildingManager : MonoBehaviour
 {
     private Camera mainCamera;
 
+    public static BuildingManager Instance { get; private set; }
+
     [SerializeField]
-    private BuildingTypeSO buildingType;
+    private BuildingTypeSO activeBuildingType;
 
     private BuildingTypeListSO buildingTypeList;
 
     // Use to initialize internal object, not depend on other external object
     private void Awake()
     {
+        Instance = this;
         // Debug.Log(Resources.Load<BuildingTypeListSO>("BuildingTypeList"));
 
         buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
 
-        buildingType = buildingTypeList.list[0];
+        // activeBuildingType = buildingTypeList.list[0];
     }
 
     // Use when need to access external object
@@ -27,19 +31,17 @@ public class BuildingManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        // Check if the mouse is clicked and not on the card UI
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            Instantiate(buildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            buildingType = buildingTypeList.list[0];
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            buildingType = buildingTypeList.list[1];
+            if (activeBuildingType != null)
+            {
+                Instantiate(
+                    activeBuildingType.prefab,
+                    GetMouseWorldPosition(),
+                    Quaternion.identity
+                );
+            }
         }
     }
 
@@ -49,5 +51,15 @@ public class BuildingManager : MonoBehaviour
 
         mouseWorldPosition.z = 0f;
         return mouseWorldPosition;
+    }
+
+    public void SetActiveBuildingType(BuildingTypeSO buildingType)
+    {
+        activeBuildingType = buildingType;
+    }
+
+    public BuildingTypeSO GetActiveBuildingType()
+    {
+        return activeBuildingType;
     }
 }
