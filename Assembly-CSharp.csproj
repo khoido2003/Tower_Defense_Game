@@ -64,6 +64,7 @@
     <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\ResourceTypeListSO.cs" />
     <Compile Include="Assets\Scripts\BuildingTypeHolder.cs" />
+    <Compile Include="Assets\Scripts\SpritePositionSortOrder.cs" />
     <Compile Include="Assets\Scripts\BuildingTypeSeletUI.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\ResourceTypeSO.cs" />
     <Compile Include="Assets\Scripts\ResourceGenerator.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\ResourceUI.cs" />
+    <Compile Include="Assets\Scripts\ResourceNode.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\BuidlingTypeListSO.cs" />
   </ItemGroup>
   <ItemGroup>

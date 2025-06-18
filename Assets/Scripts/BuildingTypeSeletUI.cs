@@ -24,7 +24,7 @@ public class BuildingTypeSeletUI : MonoBehaviour
 
         int index = 0;
 
-        Transform arrowBtn = Instantiate(btnTemplate, transform);
+        arrowBtn = Instantiate(btnTemplate, transform);
 
         arrowBtn.gameObject.SetActive(true);
 
