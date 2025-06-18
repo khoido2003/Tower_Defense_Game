@@ -2,6 +2,5 @@ using UnityEngine;
 
 public class BuildingTypeHolder : MonoBehaviour
 {
-    public BuildingTypeSO buildingType;
- 
+    public BuildingTypeSO buildingType; 
 }

@@ -62,6 +62,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ScriptableObjects\BuildingTypeSO.cs" />
     <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
+    <Compile Include="Assets\Scripts\UtilsClass.cs" />
+    <Compile Include="Assets\Scripts\BuildingGhost.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\ResourceTypeListSO.cs" />
     <Compile Include="Assets\Scripts\BuildingTypeHolder.cs" />
     <Compile Include="Assets\Scripts\SpritePositionSortOrder.cs" />

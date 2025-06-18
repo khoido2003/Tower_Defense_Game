@@ -7,6 +7,9 @@ public class BuildingTypeSeletUI : MonoBehaviour
     private Dictionary<BuildingTypeSO, Transform> btnTransformDictionary;
 
     [SerializeField]
+    private List<BuildingTypeSO> ignoreBuildingTypeList;
+
+    [SerializeField]
     private Sprite arrowSprite;
 
     private Transform arrowBtn;
@@ -49,6 +52,9 @@ public class BuildingTypeSeletUI : MonoBehaviour
 
         foreach (BuildingTypeSO buildingType in buildingTypeList.list)
         {
+
+    if (ignoreBuildingTypeList.Contains(buildingType)) continue;
+
             // Spawn the new object as the child of the current parent transform
             Transform btnTransform = Instantiate(btnTemplate, transform);
 
