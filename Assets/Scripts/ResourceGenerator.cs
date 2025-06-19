@@ -7,17 +7,13 @@ public class ResourceGenerator : MonoBehaviour
     private float timer;
     private float timerMax;
 
-    private void Awake()
-    {
-        resourceGeneratorData =
-            GetComponent<BuildingTypeHolder>().buildingType.resourceGeneratorData;
-        timerMax = resourceGeneratorData.timerMax;
-    }
-
-    private void Start()
+    public static int GetNearbyResourceAmount(
+        ResourceGeneratorData resourceGeneratorData,
+        Vector3 position
+    )
     {
         Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(
-            transform.position,
+            position,
             resourceGeneratorData.resourceTypeDetectionRadius
         );
 
@@ -35,7 +31,7 @@ public class ResourceGenerator : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Unknow re");
+                    Debug.Log("Unknow resources");
                 }
             }
         }
@@ -43,6 +39,23 @@ public class ResourceGenerator : MonoBehaviour
             nearbyResourceAmount,
             0,
             resourceGeneratorData.maxResourceAmount
+        );
+
+        return nearbyResourceAmount;
+    }
+
+    private void Awake()
+    {
+        resourceGeneratorData =
+            GetComponent<BuildingTypeHolder>().buildingType.resourceGeneratorData;
+        timerMax = resourceGeneratorData.timerMax;
+    }
+
+    private void Start()
+    {
+        int nearbyResourceAmount = GetNearbyResourceAmount(
+            resourceGeneratorData,
+            transform.position
         );
 
         if (nearbyResourceAmount == 0)
@@ -75,5 +88,20 @@ public class ResourceGenerator : MonoBehaviour
 
             ResourceManager.Instance.AddResource(resourceGeneratorData.resourceType, 1);
         }
+    }
+
+    public ResourceGeneratorData GetResourceGeneratorData()
+    {
+        return resourceGeneratorData;
+    }
+
+    public float GetTimerNormalized()
+    {
+        return timer / timerMax;
+    }
+
+    public float GetAmountGeneratedPerSecond()
+    {
+        return 1 / timerMax;
     }
 }

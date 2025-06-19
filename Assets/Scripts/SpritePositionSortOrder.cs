@@ -13,7 +13,23 @@ public class SpritePositionSortOrder : MonoBehaviour
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = transform.GetComponent<SpriteRenderer>();
+
+        if (spriteRenderer == null)
+        {
+            Transform spriteTransform = transform.Find("sprite");
+
+            if (spriteTransform != null)
+            {
+                spriteRenderer = spriteTransform.GetComponent<SpriteRenderer>();
+            }
+            else
+            {
+                Debug.LogWarning(
+                    $"{name}: No SpriteRenderer found on 'sprite' child. Disabling SpritePositionSortOrder."
+                );
+            }
+        }
     }
 
     private void LateUpdate()

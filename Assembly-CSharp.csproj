@@ -72,9 +72,11 @@
     <Compile Include="Assets\Scripts\ResourceGenerator.cs" />
     <Compile Include="Assets\Scripts\ResourceGeneratorData.cs" />
     <Compile Include="Assets\Scripts\CameraHandler.cs" />
+    <Compile Include="Assets\Scripts\NearbyOverlay.cs" />
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\ResourceUI.cs" />
+    <Compile Include="Assets\Scripts\ResourceOverlay.cs" />
     <Compile Include="Assets\Scripts\ResourceNode.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\BuidlingTypeListSO.cs" />
   </ItemGroup>

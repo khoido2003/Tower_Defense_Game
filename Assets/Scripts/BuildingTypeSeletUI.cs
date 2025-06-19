@@ -52,8 +52,8 @@ public class BuildingTypeSeletUI : MonoBehaviour
 
         foreach (BuildingTypeSO buildingType in buildingTypeList.list)
         {
-
-    if (ignoreBuildingTypeList.Contains(buildingType)) continue;
+            if (ignoreBuildingTypeList.Contains(buildingType))
+                continue;
 
             // Spawn the new object as the child of the current parent transform
             Transform btnTransform = Instantiate(btnTemplate, transform);
