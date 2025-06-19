@@ -21,3 +21,8 @@ MonoBehaviour:
     resourceType: {fileID: 11400000, guid: 7b2627496bdd1034eaa895ae05814dec, type: 2}
     resourceTypeDetectionRadius: 7
     maxResourceAmount: 3
+  constructionResourceAmountArray:
+  - resourceType: {fileID: 11400000, guid: 41fa82df23fc1b1488f6132d5d33f36a, type: 2}
+    amount: 50
+  - resourceType: {fileID: 11400000, guid: 7b3e7c53c9991364aabd92068687c04d, type: 2}
+    amount: 40
