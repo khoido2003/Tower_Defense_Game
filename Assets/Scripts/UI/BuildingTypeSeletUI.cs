@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,6 +49,20 @@ public class BuildingTypeSeletUI : MonoBehaviour
                 BuildingManager.Instance.SetActiveBuildingType(null);
             });
 
+        MouseEnterExitEvent mouseEnterExitEvent = arrowBtn.GetComponent<MouseEnterExitEvent>();
+
+        // Show tooltip when hover on card
+        mouseEnterExitEvent.OnMouseEnter += (object sender, EventArgs e) =>
+        {
+            TooltipUI.Instance.Show("Arrow");
+        };
+
+        // Hide the tooltip if the mouse hover outside the card
+        mouseEnterExitEvent.OnMouseExit += (object sender, EventArgs e) =>
+        {
+            TooltipUI.Instance.Hide();
+        };
+
         index++;
 
         foreach (BuildingTypeSO buildingType in buildingTypeList.list)
@@ -75,6 +90,25 @@ public class BuildingTypeSeletUI : MonoBehaviour
                     BuildingManager.Instance.SetActiveBuildingType(buildingType);
                 });
 
+            mouseEnterExitEvent = btnTransform.GetComponent<MouseEnterExitEvent>();
+
+            // Show tooltip when hover on card
+            mouseEnterExitEvent.OnMouseEnter += (object sender, EventArgs e) =>
+            {
+                TooltipUI.Instance.Show(
+                    buildingType.nameString
+                        + "\n"
+                        + buildingType.GetConstructionResourceCostString()
+                );
+            };
+
+            // Hide the tooltip if the mouse hover outside the card
+            mouseEnterExitEvent.OnMouseExit += (object sender, EventArgs e) =>
+            {
+                TooltipUI.Instance.Hide();
+            };
+
+            // Add the building just spawned to the Dictionary
             btnTransformDictionary[buildingType] = btnTransform;
 
             index++;

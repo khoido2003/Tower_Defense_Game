@@ -45,25 +45,46 @@ public class BuildingManager : MonoBehaviour
         // Check if the mouse is clicked and not on the card UI
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
-            if (
-                activeBuildingType != null
-                && CanSpawnBuilding(activeBuildingType, UtilsClass.GetMouseWorldPosition())
-            )
+            if (activeBuildingType != null)
             {
                 if (
-                    ResourceManager.Instance.CanAfford(
-                        activeBuildingType.constructionResourceAmountArray
+                    CanSpawnBuilding(
+                        activeBuildingType,
+                        UtilsClass.GetMouseWorldPosition(),
+                        out string errorMessage
                     )
                 )
                 {
-                    ResourceManager.Instance.SpendResource(
-                        activeBuildingType.constructionResourceAmountArray
-                    );
+                    if (
+                        ResourceManager.Instance.CanAfford(
+                            activeBuildingType.constructionResourceAmountArray
+                        )
+                    )
+                    {
+                        ResourceManager.Instance.SpendResource(
+                            activeBuildingType.constructionResourceAmountArray
+                        );
 
-                    Instantiate(
-                        activeBuildingType.prefab,
-                        UtilsClass.GetMouseWorldPosition(),
-                        Quaternion.identity
+                        Instantiate(
+                            activeBuildingType.prefab,
+                            UtilsClass.GetMouseWorldPosition(),
+                            Quaternion.identity
+                        );
+                    }
+                    else
+                    {
+                        TooltipUI.Instance.Show(
+                            "Can't afford "
+                                + activeBuildingType.GetConstructionResourceCostString(),
+                            new TooltipUI.TooltipTimer { timer = 2f }
+                        );
+                    }
+                }
+                else
+                {
+                    TooltipUI.Instance.Show(
+                        errorMessage,
+                        new TooltipUI.TooltipTimer { timer = 2f }
                     );
                 }
             }
@@ -86,7 +107,11 @@ public class BuildingManager : MonoBehaviour
         return activeBuildingType;
     }
 
-    private bool CanSpawnBuilding(BuildingTypeSO buildingType, Vector3 position)
+    private bool CanSpawnBuilding(
+        BuildingTypeSO buildingType,
+        Vector3 position,
+        out string errorMessage
+    )
     {
         BoxCollider2D boxCollider2D = buildingType.prefab.GetComponent<BoxCollider2D>();
         Collider2D[] collider2DArray = Physics2D.OverlapBoxAll(
@@ -97,7 +122,10 @@ public class BuildingManager : MonoBehaviour
 
         bool isAreaClear = collider2DArray.Length == 0;
         if (!isAreaClear)
+        {
+            errorMessage = "Area is not clear!";
             return false;
+        }
 
         // MIN radius allow to spawn new building
         collider2DArray = Physics2D.OverlapCircleAll(position, buildingType.minConstructionRadius);
@@ -112,6 +140,8 @@ public class BuildingManager : MonoBehaviour
                 // Has a BuildingTypeHolder
                 if (buildingTypeHolder.buildingType == buildingType)
                 {
+                    errorMessage = "Too close to another building with the same type!";
+
                     // There already a building this type within the construction radius
                     return false;
                 }
@@ -129,11 +159,12 @@ public class BuildingManager : MonoBehaviour
 
             if (buildingTypeHolder != null)
             {
+                errorMessage = "";
                 // Valid position to spawn new building
                 return true;
             }
         }
-
+        errorMessage = "Too far from any other building!";
         return false;
     }
 }

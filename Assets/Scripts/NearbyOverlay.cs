@@ -5,7 +5,8 @@ public class NearbyOverlay : MonoBehaviour
 {
     private ResourceGeneratorData resourceGeneratorData;
 
-    private void Awake() {
+    private void Awake()
+    {
         Hide();
     }
 

@@ -29,10 +29,6 @@ public class ResourceGenerator : MonoBehaviour
                     // Same resource type!
                     nearbyResourceAmount++;
                 }
-                else
-                {
-                    Debug.Log("Unknow resources");
-                }
             }
         }
         nearbyResourceAmount = Mathf.Clamp(
