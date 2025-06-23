@@ -28,15 +28,7 @@ public class ResourceManager : MonoBehaviour
         // TestLog();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(
-                typeof(ResourceTypeListSO).Name
-            );
-        }
-    }
+    private void Update() { }
 
     // private void TestLog()
     // {

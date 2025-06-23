@@ -61,8 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ScriptableObjects\BuildingTypeSO.cs" />
+    <Compile Include="Assets\Scripts\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\ResourceAmount.cs" />
     <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
+    <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\UtilsClass.cs" />
     <Compile Include="Assets\Scripts\BuildingGhost.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\ResourceTypeListSO.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Assets\Scripts\MouseEnterExistEvent.cs" />
     <Compile Include="Assets\Scripts\UI\TooltipUI.cs" />
     <Compile Include="Assets\Scripts\UI\ResourceUI.cs" />
+    <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\NearbyOverlay.cs" />
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />

@@ -10,6 +10,7 @@ public class BuildingTypeSO : ScriptableObject
     public float minConstructionRadius;
     public ResourceGeneratorData resourceGeneratorData;
     public ResourceAmount[] constructionResourceAmountArray;
+    public int healthAmountMax;
 
     public string GetConstructionResourceCostString()
     {
