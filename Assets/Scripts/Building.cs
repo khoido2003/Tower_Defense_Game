@@ -16,13 +16,7 @@ public class Building : MonoBehaviour
         healthSystem.OnDied += HealthSystem_OnDied;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            healthSystem.Damage(10);
-        }
-    }
+    private void Update() { }
 
     private void HealthSystem_OnDied(object sender, EventArgs e)
     {

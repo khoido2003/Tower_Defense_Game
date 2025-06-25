@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\UtilsClass.cs" />
     <Compile Include="Assets\Scripts\BuildingGhost.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\ResourceTypeListSO.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\BuildingTypeHolder.cs" />
     <Compile Include="Assets\Scripts\SpritePositionSortOrder.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\ResourceTypeSO.cs" />

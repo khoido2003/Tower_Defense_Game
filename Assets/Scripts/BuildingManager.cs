@@ -6,6 +6,9 @@ public class BuildingManager : MonoBehaviour
 {
     private Camera mainCamera;
 
+    [SerializeField]
+    private Building hqBuilding;
+
     ///////////////////////////
 
     // Event to spawn ghost building
@@ -89,6 +92,14 @@ public class BuildingManager : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Vector3 enemySpawnPosition =
+                UtilsClass.GetMouseWorldPosition() + UtilsClass.GetRandomDir() * 5f;
+
+            Enemy.Create(enemySpawnPosition);
+        }
     }
 
     public void SetActiveBuildingType(BuildingTypeSO buildingType)
@@ -166,5 +177,10 @@ public class BuildingManager : MonoBehaviour
         }
         errorMessage = "Too far from any other building!";
         return false;
+    }
+
+    public Building GetHqBuilding()
+    {
+        return hqBuilding;
     }
 }
