@@ -66,6 +66,7 @@
     <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
     <Compile Include="Assets\Scripts\ArrowProjectile.cs" />
     <Compile Include="Assets\Scripts\Building.cs" />
+    <Compile Include="Assets\Scripts\UI\NextEnemyWaveUI.cs" />
     <Compile Include="Assets\Scripts\UtilsClass.cs" />
     <Compile Include="Assets\Scripts\BuildingGhost.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\ResourceTypeListSO.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Tower.cs" />
+    <Compile Include="Assets\Scripts\EnemyWaveManager.cs" />
     <Compile Include="Assets\Scripts\ResourceOverlay.cs" />
     <Compile Include="Assets\Scripts\ResourceNode.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\BuidlingTypeListSO.cs" />
