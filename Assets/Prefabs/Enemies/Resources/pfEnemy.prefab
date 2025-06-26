@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 3522277539692591195}
   - component: {fileID: 7870228995875961470}
   - component: {fileID: 423345729089945356}
+  - component: {fileID: 3922955425746200603}
   m_Layer: 0
   m_Name: pfEnemy
   m_TagString: Untagged
@@ -137,6 +138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6261192552919919277}
   - {fileID: 1593090286335198398}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -216,3 +218,82 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.2, y: 1.2}
   m_Direction: 0
+--- !u!114 &3922955425746200603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7708857912497682844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb74e9d1a7e7b4847b61e28a71d81096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmountMax: 50
+--- !u!1001 &8614797731464554326
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 932928934039527159}
+    m_Modifications:
+    - target: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8074249552657351003, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: m_Name
+      value: pfHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915678307109730651, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+      propertyPath: healthSystem
+      value: 
+      objectReference: {fileID: 3922955425746200603}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+--- !u!4 &6261192552919919277 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2407685895983844859, guid: a65eb810055356b48a3f3a10e96549b8, type: 3}
+  m_PrefabInstance: {fileID: 8614797731464554326}
+  m_PrefabAsset: {fileID: 0}

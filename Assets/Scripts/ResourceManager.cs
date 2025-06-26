@@ -11,6 +11,9 @@ public class ResourceManager : MonoBehaviour
 
     private Dictionary<ResourceTypeSO, int> resourceAmountDictionary;
 
+    [SerializeField]
+    private List<ResourceAmount> startingResourceAmountList;
+
     private void Awake()
     {
         Instance = this;
@@ -25,7 +28,11 @@ public class ResourceManager : MonoBehaviour
         {
             resourceAmountDictionary[resourceType] = 0;
         }
-        // TestLog();
+
+        foreach (ResourceAmount resourceAmount in startingResourceAmountList)
+        {
+            AddResource(resourceAmount.resourceType, resourceAmount.amount);
+        }
     }
 
     private void Update() { }

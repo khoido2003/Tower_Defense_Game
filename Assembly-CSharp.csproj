@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\ResourceAmount.cs" />
     <Compile Include="Assets\_\Scripts\GradientHolder.cs" />
+    <Compile Include="Assets\Scripts\ArrowProjectile.cs" />
     <Compile Include="Assets\Scripts\Building.cs" />
     <Compile Include="Assets\Scripts\UtilsClass.cs" />
     <Compile Include="Assets\Scripts\BuildingGhost.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Assets\Scripts\NearbyOverlay.cs" />
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
+    <Compile Include="Assets\Scripts\Tower.cs" />
     <Compile Include="Assets\Scripts\ResourceOverlay.cs" />
     <Compile Include="Assets\Scripts\ResourceNode.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\BuidlingTypeListSO.cs" />

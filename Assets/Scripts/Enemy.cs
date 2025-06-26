@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private float lookForTargetTimer;
     private float lookForTargetTimerMax = .2f;
+    private HealthSystem healthSystem;
 
     public static Enemy Create(Vector3 position)
     {
@@ -18,19 +19,27 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        HandleTargeting();
-        HandleMovement();
+        healthSystem = GetComponent<HealthSystem>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
+
+        healthSystem.OnDied += HealthSystem_OnDied;
+
+        Building hqBuilding = BuildingManager.Instance.GetHqBuilding();
+        if (hqBuilding != null && hqBuilding.gameObject != null)
+        {
+            targetTransform = hqBuilding.transform;
+        }
+        lookForTargetTimer = Random.Range(0f, lookForTargetTimerMax);
+    }
+
+    private void HealthSystem_OnDied(object sender, System.EventArgs e)
+    {
+        Destroy(gameObject);
     }
 
     private void Update()
     {
-        lookForTargetTimer -= Time.deltaTime;
-        if (lookForTargetTimer < 0f)
-        {
-            lookForTargetTimer += lookForTargetTimerMax;
-            LookForTarget();
-        }
-
+        HandleTargeting();
         HandleMovement();
     }
 
@@ -55,14 +64,12 @@ public class Enemy : MonoBehaviour
 
     private void HandleTargeting()
     {
-        rigidbody2d = GetComponent<Rigidbody2D>();
-        Building hqBuilding = BuildingManager.Instance.GetHqBuilding();
-        if (hqBuilding != null && hqBuilding.gameObject != null)
+        lookForTargetTimer -= Time.deltaTime;
+        if (lookForTargetTimer < 0f)
         {
-            targetTransform = hqBuilding.transform;
+            lookForTargetTimer += lookForTargetTimerMax;
+            LookForTarget();
         }
-
-        lookForTargetTimer = Random.Range(0f, lookForTargetTimerMax);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
