@@ -25,8 +25,10 @@ public class BuildingManager : MonoBehaviour
 
     [SerializeField]
     private BuildingTypeSO activeBuildingType;
-
     private BuildingTypeListSO buildingTypeList;
+    public float constructionTimerMax;
+
+    ////////////////////////////////////////////////////
 
     // Use to initialize internal object, not depend on other external object
     private void Awake()
@@ -68,11 +70,18 @@ public class BuildingManager : MonoBehaviour
                             activeBuildingType.constructionResourceAmountArray
                         );
 
-                        Instantiate(
-                            activeBuildingType.prefab,
+                        // Create a construction before spawn real building
+                        BuildingConstruction.Create(
                             UtilsClass.GetMouseWorldPosition(),
-                            Quaternion.identity
+                            activeBuildingType
                         );
+
+                        // // Spawn the building
+                        // Instantiate(
+                        //     activeBuildingType.prefab,
+                        //     UtilsClass.GetMouseWorldPosition(),
+                        //     Quaternion.identity
+                        // );
                     }
                     else
                     {

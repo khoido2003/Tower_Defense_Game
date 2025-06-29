@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\UI\NextEnemyWaveUI.cs" />
     <Compile Include="Assets\Scripts\UtilsClass.cs" />
     <Compile Include="Assets\Scripts\BuildingGhost.cs" />
+    <Compile Include="Assets\Scripts\UI\ConstructionTimeUI.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\ResourceTypeListSO.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\BuildingTypeHolder.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\NearbyOverlay.cs" />
     <Compile Include="Assets\Scripts\BuildingManager.cs" />
+    <Compile Include="Assets\Scripts\BuildingConstruction.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Tower.cs" />
     <Compile Include="Assets\Scripts\EnemyWaveManager.cs" />

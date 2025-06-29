@@ -24,3 +24,4 @@ MonoBehaviour:
     maxResourceAmount: 7
   constructionResourceAmountArray: []
   healthAmountMax: 150
+  constructionTimerMax: 5

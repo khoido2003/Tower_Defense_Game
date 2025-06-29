@@ -9427,7 +9427,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -27339,6 +27339,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8941115784949838020, guid: 7beea9992a5107741a03dfa43dc918b1, type: 3}
   m_PrefabInstance: {fileID: 1709673071}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1711050913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1711050914}
+  - component: {fileID: 1711050915}
+  m_Layer: 0
+  m_Name: PostProcessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1711050914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711050913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1711050915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711050913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 83b7a18d2b54e1e4bb3ce6b31c06cdd9, type: 2}
 --- !u!4 &1711387326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6664607472504149067, guid: 937634ad30a9a7d488e7bc25542ed0e1, type: 3}
@@ -28250,6 +28299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hqBuilding: {fileID: 1948935197}
   activeBuildingType: {fileID: 0}
+  constructionTimerMax: 5
 --- !u!4 &1764113995
 Transform:
   m_ObjectHideFlags: 0
@@ -34675,3 +34725,4 @@ SceneRoots:
   - {fileID: 1317067673}
   - {fileID: 495169154}
   - {fileID: 1227490118}
+  - {fileID: 1711050914}
