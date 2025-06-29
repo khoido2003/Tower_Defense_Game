@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\Tower.cs" />
     <Compile Include="Assets\Scripts\EnemyWaveManager.cs" />
+    <Compile Include="Assets\Scripts\BuildingDemolisher.cs" />
     <Compile Include="Assets\Scripts\ResourceOverlay.cs" />
     <Compile Include="Assets\Scripts\ResourceNode.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\BuidlingTypeListSO.cs" />
