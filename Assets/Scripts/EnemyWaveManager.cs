@@ -25,8 +25,11 @@ public class EnemyWaveManager : MonoBehaviour
     private int remainingEnemySpawnAmount;
     private Vector3 spawnPosition;
 
+    public static EnemyWaveManager Instance { get; private set; }
+
     private void Start()
     {
+        Instance = this;
         nextWaveSpawnTimer = 3f;
         spawnPosition = spawnPositionTransformList[
             UnityEngine.Random.Range(0, spawnPositionTransformList.Count)
@@ -86,7 +89,7 @@ public class EnemyWaveManager : MonoBehaviour
 
     private void SpawnWave()
     {
-        remainingEnemySpawnAmount = 5 + 3 * waveNumber;
+        remainingEnemySpawnAmount = 300 + 3 * waveNumber;
 
         waveNumber++;
         OnWaveNumberChanged?.Invoke(this, EventArgs.Empty);
