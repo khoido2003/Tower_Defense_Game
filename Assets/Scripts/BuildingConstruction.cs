@@ -47,6 +47,10 @@ public class BuildingConstruction : MonoBehaviour
 
             // After finish waiting, spawn the real building and remove the construction
             Instantiate(buildingType.prefab, transform.position, Quaternion.identity);
+
+            // Playing sound
+            SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingPlaced);
+
             Destroy(gameObject);
         }
     }

@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
 
         healthSystem.OnDied += HealthSystem_OnDied;
+        healthSystem.OnDamaged += HealthSystem_OnDamaged;
 
         Building hqBuilding = BuildingManager.Instance.GetHqBuilding();
         if (hqBuilding != null && hqBuilding.gameObject != null)
@@ -32,9 +33,18 @@ public class Enemy : MonoBehaviour
         lookForTargetTimer = Random.Range(0f, lookForTargetTimerMax);
     }
 
+    private void HealthSystem_OnDamaged(object sender, System.EventArgs e)
+    {
+        // Playing sound
+        SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyHit);
+    }
+
     private void HealthSystem_OnDied(object sender, System.EventArgs e)
     {
         Destroy(gameObject);
+
+        // Playing sound
+        SoundManager.Instance.PlaySound(SoundManager.Sound.EnemyDie);
     }
 
     private void Update()

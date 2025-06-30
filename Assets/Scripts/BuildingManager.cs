@@ -50,6 +50,9 @@ public class BuildingManager : MonoBehaviour
     private void HQ_OnDied(object sender, EventArgs e)
     {
         GameOverUI.Instance.Show();
+
+        // Playing sound
+        SoundManager.Instance.PlaySound(SoundManager.Sound.GameOver);
     }
 
     private void Update()
@@ -89,6 +92,10 @@ public class BuildingManager : MonoBehaviour
                         //     UtilsClass.GetMouseWorldPosition(),
                         //     Quaternion.identity
                         // );
+                        //
+
+                        // Playing sound
+                        SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingPlaced);
                     }
                     else
                     {

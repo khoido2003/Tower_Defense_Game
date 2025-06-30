@@ -32,19 +32,17 @@ public class Building : MonoBehaviour
 
     private void HealthSystem_OnDamaged(object sender, EventArgs e)
     {
-        if (!healthSystem.IsFullHealth())
-        {
-            ShowBuildingRepairBtn();
-        } else {
-            HideBuildingRepairhBtn();
-        }
+        ShowBuildingRepairBtn();
+
+        // Playing sound
+        SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingDamaged);
     }
 
     private void HealthSystem_OnHealed(object sender, EventArgs e)
     {
-        if (!healthSystem.IsFullHealth())
+        if (healthSystem.IsFullHealth())
         {
-            ShowBuildingRepairBtn();
+            HideBuildingRepairhBtn();
         }
     }
 
@@ -53,6 +51,9 @@ public class Building : MonoBehaviour
     private void HealthSystem_OnDied(object sender, EventArgs e)
     {
         Destroy(gameObject);
+
+        // Playing sound
+        SoundManager.Instance.PlaySound(SoundManager.Sound.BuildingDestroyed);
     }
 
     private void OnMouseEnter()
