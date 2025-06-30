@@ -89,7 +89,7 @@ public class EnemyWaveManager : MonoBehaviour
 
     private void SpawnWave()
     {
-        remainingEnemySpawnAmount = 300 + 3 * waveNumber;
+        remainingEnemySpawnAmount = 5 + 3 * waveNumber;
 
         waveNumber++;
         OnWaveNumberChanged?.Invoke(this, EventArgs.Empty);

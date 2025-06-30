@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.23905289, b: 0.23905289, a: 1}
+  m_Color: {r: 0.2777086, g: 0.9607843, b: 0.23921566, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -149,9 +149,9 @@ GameObject:
   - component: {fileID: 8083229053536647632}
   - component: {fileID: 8717007560815903014}
   - component: {fileID: 381149685234028894}
-  - component: {fileID: 4190732198769329257}
+  - component: {fileID: 5832204317983853926}
   m_Layer: 5
-  m_Name: pfBuildingDemolisherBtn
+  m_Name: pfBuildingRepairBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4190732198769329257
+--- !u!114 &5832204317983853926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,10 +249,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8043989960622514888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bec9c9371d2144242a50287848253449, type: 3}
+  m_Script: {fileID: 11500000, guid: ca872e7d7be232649b23dee13c754ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  building: {fileID: 0}
+  healthSystem: {fileID: 0}
+  goldResourceType: {fileID: 11400000, guid: 7b2627496bdd1034eaa895ae05814dec, type: 2}
 --- !u!1 &8509637758803175908
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +319,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 581d0f3d8c2fdc4499b200681eca816e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a07ed4b0a8af2346818e39b714f84d4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
