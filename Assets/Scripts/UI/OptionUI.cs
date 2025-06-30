@@ -55,7 +55,14 @@ public class OptionUI : MonoBehaviour
                 UpdateMusicVolumeText();
             });
 
-        transform.Find("MainMenuBtn").GetComponent<Button>().onClick.AddListener(() => { });
+        transform
+            .Find("MainMenuBtn")
+            .GetComponent<Button>()
+            .onClick.AddListener(() =>
+            {
+            Time.timeScale = 1f;
+                GameSceneManager.Load(GameSceneManager.Scene.MainMenuScene);
+            });
     }
 
     private void Start()
