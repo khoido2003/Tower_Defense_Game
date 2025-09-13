@@ -57,8 +57,31 @@ public class BuildingManager : MonoBehaviour
 
     private void Update()
     {
-        // Check if the mouse is clicked and not on the card UI
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        // Check if input is received and not on UI
+        bool inputReceived = false;
+        
+        if (Application.isMobilePlatform)
+        {
+            // Handle touch input
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Began && !EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                {
+                    inputReceived = true;
+                }
+            }
+        }
+        else
+        {
+            // Handle mouse input
+            if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+            {
+                inputReceived = true;
+            }
+        }
+
+        if (inputReceived)
         {
             if (activeBuildingType != null)
             {

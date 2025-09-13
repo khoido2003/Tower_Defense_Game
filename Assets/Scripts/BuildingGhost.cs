@@ -47,7 +47,26 @@ public class BuildingGhost : MonoBehaviour
 
     private void Update()
     {
-        transform.position = UtilsClass.GetMouseWorldPosition();
+        if (Application.isMobilePlatform)
+        {
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                // Only update position if not touching UI
+                if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+                {
+                    transform.position = UtilsClass.GetMouseWorldPosition();
+                }
+            }
+        }
+        else
+        {
+            // For PC, only update if not over UI
+            if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+            {
+                transform.position = UtilsClass.GetMouseWorldPosition();
+            }
+        }
     }
 
     private void Show(Sprite ghostSprite)
